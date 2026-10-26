@@ -1,30 +1,60 @@
 "use client"
 
 import { Button } from '@/components/ui/button'
-import { ArrowUp, Plus } from 'lucide-react'
+import { ArrowUp, BriefcaseBusiness, Mail, Plus, Search } from 'lucide-react'
 import React, { useState } from 'react'
 
 const quickSuggestions = [
     {
         label: "Find AI Jobs",
-        prompt: 'Find the latest AI developer jobs posted this week '
+        prompt: 'Find the latest AI developer jobs posted this week that match my skills and summarize the best opportunities for me.'
     },
     {
-        label: "Find AI Jobs",
-        prompt: 'Find the latest AI developer jobs posted this week '
+        label: "Inbox Summary",
+        prompt: 'Check my inbox and summarize the most important emails, especially anything that requires my reply or attention.'
     },
     {
-        label: "Find AI Jobs",
-        prompt: 'Find the latest AI developer jobs posted this week '
+        label: "Research Topic",
+        prompt: 'Research a topic across the web, compare multiple sources, and give me a concise summary with the most important findings.'
     },
     {
-        label: "Find AI Jobs",
-        prompt: 'Find the latest AI developer jobs posted this week '
+        label: "Plan My Day",
+        prompt: 'Check my calendar and upcoming tasks, then create a priotrized plan for everything I should focus on today.'
     },
     {
-        label: "Find AI Jobs",
-        prompt: 'Find the latest AI developer jobs posted this week '
+        label: "Reddit Trends",
+        prompt: 'Finding trending reddit discussions about AI tools and agents, then summarize the most useful and interesting conversations.'
     }
+]
+
+const templates = [
+    {
+        title: "Find latest jobs",
+        description: "Search the web for the latest jobs matching my portfolio",
+        icon: BriefcaseBusiness,
+        iconBg: "bg-orange-100",
+        iconColor: "trxt-orange-600",
+        border: "hover:border-orange-300",
+        glow: "hover:shadow-orange-100"
+    },
+    {
+        title: "Daily inbox summary",
+        description: "Summarize important emails and highlight what need to focus on",
+        icon: Mail,
+        iconBg: "bg-blue-100",
+        iconColor: "trxt-blue-600",
+        border: "hover:border-blue-300",
+        glow: "hover:shadow-blue-100"
+    },
+    {
+        title: "Research a topic",
+        description: "Search the web and create a useful research summary",
+        icon: Search,
+        iconBg: "bg-purple-100",
+        iconColor: "trxt-purple-600",
+        border: "hover:border-purple-300",
+        glow: "hover:shadow-purple-100"
+    },
 ]
 
 function CreateAgent() {
@@ -47,7 +77,7 @@ function CreateAgent() {
                     onChange={(event) => setPrompt(event.target.value)}
                 />
 
-                <div className='flex justify-center items-center'>
+                <div className='flex justify-between items-center'>
                     <div>
                         <Button variant={'ghost'} size={'icon'}>
                             <Plus />
@@ -70,6 +100,25 @@ function CreateAgent() {
                         {suggestion.label}
                     </Button>
                 ))}
+            </div>
+
+            <div className='mt-10'>
+                <h2 className='flex justify-between items-center font-semibold text-lg'>
+                    Get Started 
+                    <span className='text-sm font-medium'>View All</span>
+                </h2>
+
+                <div className='grid grid-cols-1 gap-4 md:grid-cols-3 mt-3'>
+                    {templates.map((template, index) => (
+                        <div className={`border rounded-2xl p-5 hover:cursor-pointer hover:shadow-lg ${template.border} ${template.glow}`}>
+                            <template.icon className={`h-12 w-12 p-2 ${template.iconBg} ${template.iconColor} rounded-xl`} />
+                            <div className='mt-6'>
+                                <h2 className='font-semibold text-foreground'>{template.title}</h2>
+                                <p className='text-sm mt-2 leading-5 text-muted-foreground'>{template.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     )

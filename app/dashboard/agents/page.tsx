@@ -5,7 +5,7 @@ import CreateAgent from '@/components/custom/agents/CreateAgent'
 function AgentPage() {
     return (
         <div className="w-full flex justify-center">
-            <div className='w-full max-w-3xl px-6 pt-28 pb-16'>
+            <div className='w-full max-w-3xl px-6 pt-18 pb-16'>
                 <Tabs defaultValue="create-agent" className="w-full">
                     <TabsList>
                         <TabsTrigger value="create-agent">Create Agent</TabsTrigger>

@@ -1,13 +1,17 @@
+/**
+ * Clerk proxy middleware that protects dashboard and API routes while skipping static assets.
+ */
 // import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 // import { NextResponse } from "next/server";
 
 // const isProtectedRoute = createRouteMatcher([
-//   "/dashoard",
-//   "/dashboard/:path*"
-// ]);
+//   "/dashboard",
+//   "/dashboard/:path*",
 
-// export default clerkMiddleware (async (auth, req) => {
-//   if(isProtectedRoute(req)) await auth.protect();
+// ])
+
+// export default clerkMiddleware(async (auth, req) => {
+//   if (isProtectedRoute(req)) await auth.protect()
 // })
 
 // export const config = {

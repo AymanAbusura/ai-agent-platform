@@ -47,7 +47,7 @@ function RecentRuns({ agentRunList, loading }: Props) {
                     <TableCaption>All recent agents log</TableCaption>
                     <TableHeader>
                         <TableRow>
-                            <TableHead className="w-[100px]">Agent</TableHead>
+                            <TableHead className="w-25">Agent</TableHead>
                             <TableHead>Task</TableHead>
                             <TableHead>Status</TableHead>
                             <TableHead className="">Updated</TableHead>
@@ -66,7 +66,7 @@ function RecentRuns({ agentRunList, loading }: Props) {
                         )) : agentRunList.map((run, index) => (
                             <TableRow key={index}>
                                 <TableCell className="font-medium p-5" >{run?.name}</TableCell>
-                                <TableCell className='truncate max-w-[200px]'>{run.task}</TableCell>
+                                <TableCell className='truncate max-w-50'>{run.task}</TableCell>
                                 <TableCell>{renderStatus(run.status)}</TableCell>
                                 <TableCell >{run.completedAt ? moment(run.completedAt).fromNow() : moment(run.createdAt).fromNow()}</TableCell>
                                 <TableCell>

@@ -101,7 +101,7 @@ function AgentRunResultDialog({ run, open, onOpenChange }: Props) {
                                 {run?.output && typeof run.output != "string" && (
                                     <details className="rounded-lg border bg-slate-950 text-slate-100" open={!outputText}>
                                         <summary className="cursor-pointer px-4 py-3 text-sm font-medium text-slate-100">Full result payload</summary>
-                                        <pre className="max-h-[420px] overflow-auto border-t border-white/10 p-4 text-xs leading-5">
+                                        <pre className="max-h-105 overflow-auto border-t border-white/10 p-4 text-xs leading-5">
                                             {formatValue(run.output)}
                                         </pre>
                                     </details>

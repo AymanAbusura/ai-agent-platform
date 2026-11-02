@@ -1,3 +1,6 @@
+/*
+ * Global Tailwind theme, design tokens, and application-wide base styles.
+ */
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";

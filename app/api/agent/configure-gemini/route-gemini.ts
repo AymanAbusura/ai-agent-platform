@@ -9,7 +9,7 @@ import { AgentConfigRespSchema } from "@/data/Gemini/ResponseSchema";
 import { AgentConfig, AgentRun, db, tools } from "@/db";
 import { currentUser } from "@clerk/nextjs/server";
 import { and, count, desc, eq } from "drizzle-orm";
-// import { calculateNextDailyRun } from "@/lib/agent-schedule";
+import { calculateNextDailyRun } from "@/lib/agent-schedule";
 
 const DEMO_AGENT_LIMIT = 5;
 

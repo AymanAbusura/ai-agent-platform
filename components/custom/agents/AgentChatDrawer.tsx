@@ -166,7 +166,7 @@ function AgentChatDrawer({ agent, open, onOpenChange }: Props) {
                                 >
                                     <Bubble align="end" variant="default">
                                         <BubbleContent>
-                                            <p className="whitespace-pre-wrap break-words">
+                                            <p className="whitespace-pre-wrap wrap-break-word">
                                                 {message.content}
                                             </p>
                                         </BubbleContent>

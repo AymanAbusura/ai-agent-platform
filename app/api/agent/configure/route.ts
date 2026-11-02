@@ -1,5 +1,5 @@
 /**
- * Uses Claude (Anthropic API).
+ * Uses Anthropic API.
  * API route that turns a natural-language prompt into a saved agent configuration and manages agent CRUD.
  */
 import { NextRequest, NextResponse } from "next/server";
@@ -9,7 +9,7 @@ import { AgentConfigRespSchema } from "@/data/ResponseSchema";
 import { AgentConfig, AgentRun, db, tools } from "@/db";
 import { currentUser } from "@clerk/nextjs/server";
 import { and, count, desc, eq } from "drizzle-orm";
-// import { calculateNextDailyRun } from "@/lib/agent-schedule";
+import { calculateNextDailyRun } from "@/lib/agent-schedule";
 
 const DEMO_AGENT_LIMIT = 5;
 const CLAUDE_MODEL = "claude-sonnet-5-5";
